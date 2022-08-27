@@ -5,6 +5,9 @@
 #include <stdint.h>
 
 #include "Shell.h"
+#include "Compiler.h"
+#include "VM.h"
+#include "SQLite.h"
 
 
 
