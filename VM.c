@@ -23,7 +23,7 @@ const uint32_t ROW_SIZE = 291;       //ID_SIZE + USERNAME_SIZE + EMAIL_SIZE;
 // параметры страницы строк
 const uint32_t PAGE_SIZE = 4096;  // совпадает с размером страниц памяти в ОС
 const uint32_t ROWS_PER_PAGE = 14;  //PAGE_SIZE / ROW_SIZE;
-const uint32_t TABLE_MAX_ROWS = 1400; //ROWS_PER_PAGE * TABLE_MAX_PAGES;
+const uint32_t TABLE_MAX_ROWS = 99; //ROWS_PER_PAGE * TABLE_MAX_PAGES;
 
 
 // Виртуальная машина обрабатывает оперторы
@@ -40,8 +40,11 @@ ExecuteResult execute_statement(Statement* statement, Table* table) {
 // Выполнение insert
 ExecuteResult execute_insert(Statement* statement, Table* table) {
 	if (table->num_rows >= TABLE_MAX_ROWS) {
+		//printf("FULL TABLE!!! %d %d", table->num_rows, TABLE_MAX_ROWS);
 		return EXECUTE_TABLE_FULL;
 	}
+	// Отладочный вывод
+	//printf("num_rows %d  in %d\n", table->num_rows, TABLE_MAX_ROWS);
 
 	Row* row_to_insert = &(statement->row_to_insert);
 

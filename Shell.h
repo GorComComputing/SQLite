@@ -2,7 +2,7 @@
 #define SHELL_H
 
 // Размер буфера ввода (обрабатывает-2)
-#define BUF_SIZE 255
+#define BUF_SIZE 1024
 
 // Структура буфера ввода
 typedef struct {

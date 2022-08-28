@@ -47,6 +47,9 @@ int main(int argc, char* argv[]) {
 		switch (prepare_statement(input_buffer, &statement)) {
 			case (PREPARE_SUCCESS):
 				break;
+			case (PREPARE_STRING_TOO_LONG):
+				printf("String is too long.\n");
+				continue;
 			case (PREPARE_SYNTAX_ERROR):
 				printf("Syntax error. Could not parse statement.\n");
 				continue;
@@ -64,7 +67,7 @@ int main(int argc, char* argv[]) {
 				printf("Executed.\n");
 				break;
 			case (EXECUTE_TABLE_FULL):
-				printf("Error: TAble full.\n");
+				printf("Error: Table full.\n");
 				break;
 		}
 		

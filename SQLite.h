@@ -1,9 +1,11 @@
 #ifndef SQLITE_H
 #define SQLITE_H
 
+// Compiler
 PrepareResult prepare_statement(InputBuffer* input_buffer, Statement* statement);
+PrepareResult prepare_insert(InputBuffer* input_buffer, Statement* statement);
 
-
+// VM
 ExecuteResult execute_statement(Statement* statement, Table* table);
 ExecuteResult execute_insert(Statement* statement, Table* table);
 ExecuteResult execute_select(Statement* statement, Table* table);
@@ -15,7 +17,7 @@ Table* new_table();
 void free_table(Table* table);
 
 
-
+// Shell
 InputBuffer* new_input_buffer();
 void print_prompt();
 void read_input(InputBuffer* input_buffer);

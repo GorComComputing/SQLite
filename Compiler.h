@@ -8,6 +8,7 @@
 // Перечисление результата обработки операторов
 typedef enum {
 	PREPARE_SUCCESS,
+	PREPARE_STRING_TOO_LONG,
 	PREPARE_SYNTAX_ERROR,
 	PREPARE_UNRECOGNIZED_STATEMENT
 } PrepareResult;
@@ -21,8 +22,8 @@ typedef enum {
 // Структура записи в таблицу для insert
 typedef struct {
 	uint32_t id;
-	char username[COLUMN_USERNAME_SIZE];
-	char email[COLUMN_EMAIL_SIZE];
+	char username[COLUMN_USERNAME_SIZE + 1];
+	char email[COLUMN_EMAIL_SIZE + 1];
 } Row;
 
 // Структура хранящая оператор
