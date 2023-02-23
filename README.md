@@ -6,6 +6,8 @@
 
 ![Arhitecture_SQLite](Arhitecture_SQLite.gif)
 
+![Screenshot1.jpg](Screenshot1.jpg)
+
 Состоит из:
 - командного интерпретатора
 - компилятора SQL
